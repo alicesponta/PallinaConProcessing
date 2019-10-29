@@ -1,5 +1,5 @@
-x=50
-y=50
+x=60
+y=60
 xrett1=0
 xrett2=0
 altezzarett2=0
@@ -24,17 +24,15 @@ def draw():
     if y+25>altezzarett2 and  x>=xrett2 and x<=xrett2+80:
         versy*=-1
         fill(random(255),random(255),random(255))
-    if x>width:
+    if x>width or x<0:
         versx*=-1
-    if  x==0:
-        punti1+=10
-        print("giocatore 1 ha", punti1)
+    if x<0:
+        punti2=punti2+10
+        print ("Giocatore 2 ha", punti2)
     if y==0:
-        versy*=-1
-        punti2+=10
-        print("giocatore 2 ha", punti2)
-        
-
+        punti1=punti1+10
+        print ("Giocatore 1 ha", punti1)
+  
     
     rect(xrett1,altezzarett1,80,25)
     rect(xrett2,altezzarett2,80,25)
@@ -57,5 +55,3 @@ def keyPressed():
         xrett1*=-1
     if xrett2<0:
         xrett2*=-1
-        
-        
